@@ -1,15 +1,10 @@
 <?php 
 if(isset($_GET['login'],$_GET['password'])){
-    $login = $_GET['login'];
-    $password = $_GET['password'];
+    setcookie('user' , $_GET['login'] , time()+36000); 
+    setcookie('pass' , $_GET['password'] , time()+36000);
+    $_COOKIE['user']= $_GET['login'];
+    $_COOKIE['pass']=$_GET['password'];
 }
-   setcookie('user' , $login , time()+36000); 
-   setcookie('pass' , $password , time()+36000);
-   $_COOKIE['user']= $login;
-   $_COOKIE['pass']=$password;
-   $cookieUser = $_COOKIE['user'];
-   $cookiePass =$_COOKIE['pass'];
-   
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +29,7 @@ if(isset($_GET['login'],$_GET['password'])){
     </form>
     <?php 
     }else{
-        echo "Hey salut ". $cookieUser . " tu as etais hacker ton mot de passe c'est :" . $cookiePass;
+        echo "Hey salut ". $_COOKIE['user'] . " tu as etais hacker ton mot de passe c'est :" . $_COOKIE['pass'];
     }
     ?>
 </body>
