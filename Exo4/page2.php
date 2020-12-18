@@ -1,9 +1,8 @@
 <?php 
-    setcookie('user' , $_GET['login'] , time()+36000); 
-    setcookie('pass' , $_GET['password'] , time()+36000);
-    $_COOKIE['user']= $_GET['login'];
-    $_COOKIE['pass']=$_GET['password'];
-
+    $login = $_GET['login'];
+    $pass = $_GET['password'];
+    setcookie('user' , $login , time()+36000); 
+    setcookie('pass' , $pass , time()+36000);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,7 +13,7 @@
 </head>
 <body>
 <?php
-echo "Hey salut ". $_COOKIE['user'] . " tu as etais hacker ton mot de passe c'est : " . $_COOKIE['pass'];
+echo "Hey salut ". $login . " tu as etais hacker ton mot de passe c'est : " . $pass;
 ?>
 </body>
 </html>

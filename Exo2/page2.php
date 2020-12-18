@@ -1,7 +1,7 @@
 <?php session_start(); 
-    $lastName = $_SESSION['lastName']= 'THOMAS';
-    $firstName = $_SESSION['firstName']= 'Lucas';
-    $age = $_SESSION['age']= 21 ;
+    $lastName = $_SESSION['lastName'];
+    $firstName = $_SESSION['firstName'];
+    $age = $_SESSION['age'];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
